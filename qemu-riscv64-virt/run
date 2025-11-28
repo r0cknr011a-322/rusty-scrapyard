@@ -1,0 +1,15 @@
+#!/bin/python3
+import sys
+import subprocess
+
+sim = [
+    'qemu-system-riscv64',
+    '-nographic',
+    '-M', 'virt',
+    '-bios', 'target/main.elf'
+]
+
+if len(sys.argv) > 1 and sys.argv[1] == 'debug':
+    sim += ['-s', '-S']
+
+subprocess.run(sim)

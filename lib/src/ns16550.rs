@@ -36,7 +36,7 @@ impl<'a, RW: RWVolatile8> Future for SendTask<'_, RW> {
 
     fn poll(self: Pin<&mut Self>, _cx: &mut Context<'_>) -> Poll<Self::Output> {
         for b in self.data {
-            // self.io.wr8_volatile(0x00, *b);
+            self.io.wr8_volatile(0x00, *b);
         }
         Poll::Ready(Ok(self.data.len()))
     }
