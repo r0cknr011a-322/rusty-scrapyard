@@ -69,11 +69,11 @@ impl IOBufMem<'_> {
     }
 
     fn off<T>(&self, off: usize) -> *const T {
-        (&self.buf[off..off+mem::size_of::<T>()]).as_ptr().cast::<T>()
+        (&self.buf[off..off + mem::size_of::<T>()]).as_ptr().cast::<T>()
     }
 
     fn off_mut<T>(&self, off: usize) -> *mut T {
-        (&self.buf[off..off+mem::size_of::<T>()]).as_ptr().cast::<T>().cast_mut()
+        (&self.buf[off..]).as_ptr().cast::<T>().cast_mut()
     }
 }
 

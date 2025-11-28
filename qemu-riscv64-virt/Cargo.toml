@@ -7,3 +7,4 @@ authors = [ "r0cknr011a" ]
 [dependencies]
 rusty-scrapyard-lib = { path = "../lib" }
 rusty-scrapyard-iomem = { path = "../iomem" }
+rusty-scrapyard-cpu = { path = "../cpu" }

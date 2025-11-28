@@ -6,7 +6,8 @@ sim = [
     'qemu-system-riscv64',
     '-nographic',
     '-M', 'virt',
-    '-bios', 'target/main.elf'
+    '-bios', 'target/main.elf',
+    '-icount', 'shift=10',
 ]
 
 if len(sys.argv) > 1 and sys.argv[1] == 'debug':

@@ -5,7 +5,7 @@ MEMORY {
 }
 
 SECTIONS {
-    .start 0x80000000 : {
+    .start : {
         *(.text.secret_start)
     }
 

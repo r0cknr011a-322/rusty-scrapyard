@@ -8,6 +8,7 @@ use core::fmt::{ self, Write };
 use rusty_scrapyard_lib::io::{ Send };
 use rusty_scrapyard_iomem::{ IOBufMem };
 use rusty_scrapyard_lib::ns16550::{ NS16550 };
+use rusty_scrapyard_cpu::riscv::{ RiscV };
 
 #[derive(Copy, Clone, Default)]
 struct LogChan { }
@@ -43,6 +44,7 @@ async fn mainloop() -> Result<(), Error> {
 
 #[unsafe(export_name = "secret_start")]
 fn main() {
+    RiscV::set_sp(0x8002_0000);
     let mut ctx = Context::from_waker(Waker::noop());
     let mainloop = pin!(mainloop());
     let _ = mainloop.poll(&mut ctx);

@@ -3,6 +3,10 @@
 version = 4
 
 [[package]]
+name = "rusty-scrapyard-cpu"
+version = "0.0.1"
+
+[[package]]
 name = "rusty-scrapyard-iomem"
 version = "0.0.1"
 
@@ -17,6 +21,7 @@ dependencies = [
 name = "rusty-scrapyard-rv64-virt"
 version = "0.0.1"
 dependencies = [
+ "rusty-scrapyard-cpu",
  "rusty-scrapyard-iomem",
  "rusty-scrapyard-lib",
 ]
